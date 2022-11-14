@@ -1,3 +1,4 @@
+package Entidades;
 import java.util.Arrays;
 
 public class SudokuGraph {
