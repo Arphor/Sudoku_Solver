@@ -1,5 +1,7 @@
 package Entidades;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Vertex {
 
@@ -38,8 +40,37 @@ public class Vertex {
         return adjList;
     }
     public void addToAdjList(Vertex v) {
-        adjList.add(v);
+        if (!adjList.contains(v)){
+            adjList.add(v);
+        }
     }
+
+    public int calcSat(){
+        ArrayList<Integer> l = new ArrayList<>();
+
+        for (Vertex i : this.adjList){
+            if (i.getColor() != 0) {
+                if (!l.contains(i.getColor())){
+                    l.add(i.getColor());
+                }
+            }
+        }
+        return l.size();
+    }
+
+    public int calcDegree(){
+
+        int count = 0;
+
+        for (Vertex i : this.adjList){
+            if (i.getColor() == 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -73,10 +104,5 @@ public class Vertex {
         return true;
     }
 
-    
-
-    
-    
-        
 }
 

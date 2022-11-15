@@ -44,28 +44,20 @@ public class SudokuGraph {
         this.vertices[x][y] = v;
     }
 
-    public void createEdgesRow(int x, int y){
-        for (int i = 0; i < dim; i++){
-            if (vertices[x][i] != vertices[x][y]){
-                vertices[x][y].addToAdjList(vertices[x][i]);
-            }
-        }
+    public int getDim() {
+        return dim;
     }
 
-    public void createEdgesColumn(int x, int y){
-        for (int i = 0; i < dim; i++){
-            if (vertices[i][y] != vertices[x][y]){
-                vertices[x][y].addToAdjList(vertices[i][y]);
-            }
-        }
+    public void setDim(int dim) {
+        this.dim = dim;
     }
 
-    public void createEdgesRegion(int x, int y){
-        for (int i = 0; i < dim; i++){
-            if (vertices[i][y] != vertices[x][y]){
-                vertices[x][y].addToAdjList(vertices[i][y]);
-            }
-        }
+    public int getRegionsize() {
+        return regionsize;
+    }
+
+    public void setRegionsize(int regionsize) {
+        this.regionsize = regionsize;
     }
 
     @Override
@@ -74,6 +66,8 @@ public class SudokuGraph {
         int result = 1;
         result = prime * result + Arrays.deepHashCode(vertices);
         result = prime * result + totalVertices;
+        result = prime * result + dim;
+        result = prime * result + regionsize;
         return result;
     }
 
@@ -89,6 +83,10 @@ public class SudokuGraph {
         if (!Arrays.deepEquals(vertices, other.vertices))
             return false;
         if (totalVertices != other.totalVertices)
+            return false;
+        if (dim != other.dim)
+            return false;
+        if (regionsize != other.regionsize)
             return false;
         return true;
     }
