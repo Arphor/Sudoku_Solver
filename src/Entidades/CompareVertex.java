@@ -1,6 +1,5 @@
+package Entidades;
 import java.util.Comparator;
-
-import Entidades.Vertex;
 
 public class CompareVertex implements Comparator<Vertex> {
 

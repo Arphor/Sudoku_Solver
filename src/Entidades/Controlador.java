@@ -1,11 +1,9 @@
+package Entidades;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-
-import Entidades.SudokuGraph;
-import Entidades.Vertex;
 
 public class Controlador {
     private SudokuGraph g;
@@ -55,6 +53,22 @@ public class Controlador {
             }
         }
     }
+    public boolean checkRow(int x, int y){
+        ArrayList<Integer> valores = new ArrayList<>(); 
+        for (int i = 0; i < g.getDim(); i++){
+            if (g.getVertice(x, i).getColor() == 0){
+                return false;
+            }
+            if(valores.contains(g.getVertice(x, i).getColor())){
+                return false;
+            }
+            valores.add(g.getVertice(x, i).getColor());
+        }
+        if(valores.size() > this.expectedtotalColors){
+            return false;
+        }
+        return true;
+    }
 
     public void createEdgesColumn(int x, int y){
         for (int i = 0; i < g.getDim(); i++){
@@ -64,6 +78,22 @@ public class Controlador {
                 g.setVertice(x, y, v);
             }
         }
+    }
+    public boolean checkColumn(int x, int y){
+        ArrayList<Integer> valores = new ArrayList<>(); 
+        for (int i = 0; i < g.getDim(); i++){
+            if (g.getVertice(i, y).getColor() == 0){
+                return false;
+            }
+            if(valores.contains(g.getVertice(i, y).getColor())){
+                return false;
+            }
+            valores.add(g.getVertice(i, y).getColor());
+        }
+        if(valores.size() > this.expectedtotalColors){
+            return false;
+        }
+        return true;
     }
 
     public void createEdgesRegion(int x, int y){
@@ -81,6 +111,30 @@ public class Controlador {
                 }
             }
         }
+    }
+
+    public boolean checkRegion(int x, int y){
+        int x_r = x;
+        int y_r = y;
+        x_r -= x_r%g.getRegionsize();
+        y_r -= y_r%g.getRegionsize();
+        ArrayList<Integer> valores = new ArrayList<>(); 
+
+        for (int i = 0; i < g.getRegionsize(); i++){
+            for (int e = 0; e < g.getRegionsize(); e++){
+                if (g.getVertice((i + x_r), (e + y_r)).getColor() == 0){
+                    return false;
+                }
+                if (valores.contains(g.getVertice((i + x_r), (e + y_r)).getColor())){
+                    return false;
+                }
+                valores.add(g.getVertice((i + x_r), (e + y_r)).getColor());
+                if(valores.size() > this.expectedtotalColors){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void createEdges(){
@@ -148,5 +202,21 @@ public class Controlador {
 
         }
 
+    }
+
+    public boolean checagem(){
+        
+        if(this.usedtotalColors > this.expectedtotalColors){
+            return false;
+        }
+        for(int i=0; i<this.expectedtotalColors; i++){
+            for(int j=0;j<this.expectedtotalColors;j++){
+                if(!checkRow(i, j) || !checkColumn(j, i)){
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
