@@ -59,6 +59,9 @@ public class Controlador {
             if (g.getVertice(x, i).getColor() == 0){
                 return false;
             }
+            if (g.getVertice(x, i).getColor() > this.expectedtotalColors){
+                return false;
+            }
             if(valores.contains(g.getVertice(x, i).getColor())){
                 return false;
             }
@@ -83,6 +86,9 @@ public class Controlador {
         ArrayList<Integer> valores = new ArrayList<>(); 
         for (int i = 0; i < g.getDim(); i++){
             if (g.getVertice(i, y).getColor() == 0){
+                return false;
+            }
+            if (g.getVertice(i, y).getColor() > this.expectedtotalColors){
                 return false;
             }
             if(valores.contains(g.getVertice(i, y).getColor())){
@@ -211,7 +217,7 @@ public class Controlador {
         }
         for(int i=0; i<this.expectedtotalColors; i++){
             for(int j=0;j<this.expectedtotalColors;j++){
-                if(!checkRow(i, j) || !checkColumn(j, i)){
+                if(!checkRow(i, j) || !checkColumn(j, i) || !checkRegion(j, i)){
                     return false;
                 }
             }

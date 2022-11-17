@@ -5,11 +5,37 @@ import Entidades.Controlador;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Leitura {
+
+    private long startTime;
+    private long startTime2;
+    private long endTime;
+
+    private Double tempoTotal;
+    private Double tempoTSolucao;
+
+    public Double timeSolu(){
+      tempoTSolucao = ((double)this.endTime - (double)this.startTime2)/1000000000; 
+      NumberFormat format = new DecimalFormat("###.#######");
+      String f = format.format(tempoTSolucao);
+      System.out.println("TESTE: " + f);
+      return tempoTSolucao;
+    }
+
+    public Double timeTotal(){
+      tempoTotal = ((double)this.endTime - (double)this.startTime)/1000000000;
+      NumberFormat format = new DecimalFormat("###.#######");
+      String f = format.format(tempoTotal);
+      System.out.println("TESTE: " + f);
+      return tempoTotal;    
+    }
+
     public void ler() {
         Scanner ler = new Scanner(System.in);
         int quantidaT = 0;
@@ -26,7 +52,7 @@ public class Leitura {
               quantidaT = Integer.parseInt(linha);
               linha = lerArq.readLine();
               lista.clear();
-              final long startTime = System.currentTimeMillis();
+              this.startTime = System.nanoTime();
               while(linha != null && !linha.isEmpty()){
                 String[] textoSeparado = linha.split(",");
                 ArrayList<Integer> row = new ArrayList<>();
@@ -40,18 +66,28 @@ public class Leitura {
 
               int[][] tabela = lista.stream().map(l -> l.stream().mapToInt(Integer::intValue).toArray()).toArray(int[][]::new);
               Controlador c = new Controlador();
+              int[][] tabelaSolu = tabela;
               
               c.makeGraph(tabela);
               c.createEdges();
-              final long startTime2 = System.currentTimeMillis();
+              this.startTime2 = System.nanoTime();
               c.DSatur();
-              final long endTime = System.currentTimeMillis();
-              System.out.println(Arrays.deepToString(tabela));
-              tabela = c.print();
-              System.out.println(Arrays.deepToString(tabela));
-              if(c.checagem()){
-                  System.out.println("OK!");
+              this.endTime = System.nanoTime();
+              //System.out.println(Arrays.deepToString(tabela));
+              tabelaSolu = c.print();
+              //System.out.println(Arrays.deepToString(tabela));
+              for(int i=0; i<tabela.length;i++){
+                System.out.print(Arrays.toString(tabela[i]));
+                System.out.print("          ");
+                System.out.println(Arrays.toString(tabelaSolu[i]));
               }
+              if(c.checagem()){
+                System.out.println("OK!");
+              }else{
+                System.out.println("Erro!");
+              }
+              System.out.println("Tempo Total: " + timeTotal());
+              System.out.println("Tempo Solução: " + timeSolu());
           }
           
     
