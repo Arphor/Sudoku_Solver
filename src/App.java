@@ -1,7 +1,12 @@
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.PrintStream;
+import java.io.Writer;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+import java.io.BufferedWriter;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
@@ -11,11 +16,18 @@ import Entidades.Leitura;
 public class App {
     public static void main(String[] args) throws Exception {
         Leitura leitor = new Leitura();
-        
-        System.out.println("Digite o nome do arquivo dentro da pasta de arquivos no formato arquivo.txt");
-        leitor.ler();
 
-        /*int arr[][] = {
+        BufferedWriter output;
+        output = new BufferedWriter(new FileWriter("resultados.txt", true));
+
+        output.newLine();
+
+        output.close();
+        
+        //System.out.println("Digite o nome do arquivo dentro da pasta de arquivos no formato arquivo.txt");
+        //leitor.ler();
+
+        int arr[][] = {
             {7,2,3,0,0,0,1,5,9},
             {6,0,0,3,0,2,0,0,8},
             {8,0,0,0,1,0,0,0,2},
@@ -26,7 +38,11 @@ public class App {
             {4,0,0,1,0,3,0,0,6},
             {9,3,2,0,0,0,7,1,4}
         };
-        
+
+        leitor.outSudokus(arr, arr, 0, 0, 1);
+
+
+        /*
         final long startTime = System.currentTimeMillis();
         Controlador c = new Controlador();
         c.makeGraph(arr);

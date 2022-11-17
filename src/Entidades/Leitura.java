@@ -3,8 +3,14 @@ package Entidades;
 import Entidades.Controlador;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -62,5 +68,46 @@ public class Leitura {
         }
     
         System.out.println();
+      }
+
+      public void outSudokus(int arr[][], int arr_result[][], int number, int tempo, int b) throws IOException{
+
+        PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
+
+        String s = "Sudoku número: " + number;
+        output.printf(s + "%n");
+        System.out.println(s);
+
+        output.printf("%-35s %-8s %n", "Original:", "Final:");
+        System.out.printf("%-35s %-8s %n", "Original:", "Final:");
+        
+
+        String linha1;
+        String linha2;
+        for (int i = 0; i < arr.length; i++){
+            linha1 = Arrays.toString(arr[i]);
+            linha2 = Arrays.toString(arr_result[i]);
+            output.printf("%-35s %-8s %n", linha1, linha2);
+            System.out.printf("%-35s %-8s %n", linha1, linha2);
+        }
+
+        output.append("\n");
+        System.out.println("\n");
+        if (b == -1){
+          output.println("Prorama NAO foi bem sucedido em preencher o sudoku.\nUtilizou mais numeros/cores do que o ideal.\n");
+          System.out.println("Prorama NAO foi bem sucedido em preencher o sudoku.\nUtilizou mais numeros/cores do que o ideal.");
+        }
+
+        if (b == 1){
+          output.append("Prorama NAO foi bem sucedido em preencher o sudoku.\nO sudoku final não condiz com as condições para uma resposta aceitavel.\n");
+          System.out.println("Prorama NAO foi bem sucedido em preencher o sudoku.\nO sudoku final não condiz com as condições para uma resposta aceitavel.");
+        }
+
+        if(b == 0){
+          output.append("Programa foi bem sucedido em preencher o sudoku.\n");
+          System.out.println("Programa foi bem sucedido em preencher o sudoku.");
+        }
+
+        output.close();
       }
 }
