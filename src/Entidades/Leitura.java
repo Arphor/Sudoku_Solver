@@ -16,6 +16,12 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Leitura {
+    private int count;
+    private int falhas;
+    private int nao_otimo;
+    private int sucessos;
+    private int totaltime;
+
     public void ler() {
         Scanner ler = new Scanner(System.in);
         int quantidaT = 0;
