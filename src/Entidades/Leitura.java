@@ -5,6 +5,7 @@ import Entidades.Controlador;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -16,7 +17,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Leitura {
-    private int count;
+    private int quantidade;
     private int falhas;
     private int nao_otimo;
     private int sucessos;
@@ -115,5 +116,23 @@ public class Leitura {
         }
 
         output.close();
+      }
+
+      public void printResults() throws FileNotFoundException{
+
+        PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
+
+        output.append("O arquivo chegou ao fim. Aqui estão os resultados:\n");
+        output.append("\n");
+        System.out.println("O arquivo chegou ao fim. Aqui estão os resultados:");
+        System.out.println();
+        output.append("Numero Total de Sudokus Processados: " + quantidade + "\n");
+        System.out.println("Numero Total de Sudokus Processados: " + quantidade);
+        output.append("Tempo Total de Execução: " + totaltime + "\n");
+        System.out.println("Tempo Total de Execução: " + totaltime);
+        output.append("Número Total de Sudokus Resolvis com Sucesso: " + sucessos + "\n");
+        System.out.println("Número Total de Sudokus Resolvis com Sucesso: " + sucessos);
+
+
       }
 }
