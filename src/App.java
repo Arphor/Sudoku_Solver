@@ -40,6 +40,7 @@ public class App {
         };
 
         leitor.outSudokus(arr, arr, 0, 0, 1);
+        leitor.printResults();
 
 
         /*

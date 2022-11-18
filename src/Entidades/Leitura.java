@@ -17,11 +17,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Leitura {
-    private int quantidade;
-    private int falhas;
-    private int nao_otimo;
-    private int sucessos;
-    private int totaltime;
+    private int quantidade=0;
+    private int falhas=0;
+    private int nao_otimo=0;
+    private int sucessos=0;
+    private int totaltime=0;
 
     public void ler() {
         Scanner ler = new Scanner(System.in);
@@ -122,16 +122,25 @@ public class Leitura {
 
         PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
 
-        output.append("O arquivo chegou ao fim. Aqui estão os resultados:\n");
-        output.append("\n");
-        System.out.println("O arquivo chegou ao fim. Aqui estão os resultados:");
-        System.out.println();
-        output.append("Numero Total de Sudokus Processados: " + quantidade + "\n");
-        System.out.println("Numero Total de Sudokus Processados: " + quantidade);
-        output.append("Tempo Total de Execução: " + totaltime + "\n");
-        System.out.println("Tempo Total de Execução: " + totaltime);
-        output.append("Número Total de Sudokus Resolvis com Sucesso: " + sucessos + "\n");
-        System.out.println("Número Total de Sudokus Resolvis com Sucesso: " + sucessos);
+
+        String s = "\n"
+                    + "O arquivo chegou ao fim. Aqui estão os resultados:\n"
+                    + "\n"
+                    + "Numero Total de Sudokus Processados: " + quantidade + "\n"
+                    + "Tempo Total de Execução: " + totaltime + "\n"
+                    + "Numero Total de Sudokus Resolvidos com Sucesso: " + sucessos + "\n"
+                    + "Numero de Sudokus Coloridos, mas com numero errado de cores: " + nao_otimo + "\n"
+                    + "Numero de Sudokus que o programa falhou em colorir: " + falhas + "\n"
+                    + "\n"
+                    + "Media de tempo de execução por sudoku: " + (totaltime/quantidade) + "\n"
+                    + (((sucessos+nao_otimo)/quantidade)*100) + "% de Sudokus coloridos com sucesso" + "\n"
+                    + (((sucessos)/quantidade)*100) + "% de Sudokus coloridos com seu numero cromatico" + "\n";
+
+        output.append(s);
+        System.out.print(s);
+
+        output.close();
+
 
 
       }
