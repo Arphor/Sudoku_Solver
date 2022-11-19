@@ -1,18 +1,9 @@
-import java.io.File;
-import java.io.FileOutputStream;
+
 import java.io.FileWriter;
-import java.io.PrintStream;
-import java.io.Writer;
-import java.util.Arrays;
-import java.util.LinkedList;
+
+import Controle.Leitura;
 
 import java.io.BufferedWriter;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.text.PDFTextStripper;
-import org.apache.pdfbox.text.PDFTextStripperByArea;
-
-import Entidades.Vertex;
-import Entidades.Leitura;
 public class App {
     public static void main(String[] args) throws Exception {
         Leitura leitor = new Leitura();

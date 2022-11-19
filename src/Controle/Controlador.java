@@ -1,9 +1,11 @@
-package Entidades;
+package Controle;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
+
+import Entidades.CompareVertex;
+import Entidades.SudokuGraph;
+import Entidades.Vertex;
 
 public class Controlador {
     private SudokuGraph g;

@@ -1,27 +1,22 @@
-package Entidades;
+package Controle;
 
-import Entidades.Controlador;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Leitura {
-    private int quantidade=0;
+    public int quantidade=0;
     private int falhas=0;
     private int nao_otimo=0;
-    private int sucessos=0;
-    private int totaltime=0;
+    public int sucessos=0;
+    public long totaltime=0;
 
     public void ler() {
         Scanner ler = new Scanner(System.in);
@@ -77,7 +72,7 @@ public class Leitura {
         System.out.println();
       }
 
-      public void outSudokus(int arr[][], int arr_result[][], int number, int tempo, int b) throws IOException{
+      public void outSudokus(int arr[][], int arr_result[][], int number, long tempo, int b) throws IOException{
 
         PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
 
@@ -120,26 +115,31 @@ public class Leitura {
 
       public void printResults() throws FileNotFoundException{
 
-        PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
+        if (quantidade != 0){
+
+        
+
+          PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
 
 
-        String s = "\n"
-                    + "O arquivo chegou ao fim. Aqui estão os resultados:\n"
-                    + "\n"
-                    + "Numero Total de Sudokus Processados: " + quantidade + "\n"
-                    + "Tempo Total de Execução: " + totaltime + "\n"
-                    + "Numero Total de Sudokus Resolvidos com Sucesso: " + sucessos + "\n"
-                    + "Numero de Sudokus Coloridos, mas com numero errado de cores: " + nao_otimo + "\n"
-                    + "Numero de Sudokus que o programa falhou em colorir: " + falhas + "\n"
-                    + "\n"
-                    + "Media de tempo de execução por sudoku: " + (totaltime/quantidade) + "\n"
-                    + (((sucessos+nao_otimo)/quantidade)*100) + "% de Sudokus coloridos com sucesso" + "\n"
-                    + (((sucessos)/quantidade)*100) + "% de Sudokus coloridos com seu numero cromatico" + "\n";
+          String s = "\n"
+                      + "O arquivo chegou ao fim. Aqui estão os resultados:\n"
+                      + "\n"
+                      + "Numero Total de Sudokus Processados: " + quantidade + "\n"
+                      + "Tempo Total de Execução: " + totaltime + "\n"
+                      + "Numero Total de Sudokus Resolvidos com Sucesso: " + sucessos + "\n"
+                      + "Numero de Sudokus Coloridos, mas com numero errado de cores: " + nao_otimo + "\n"
+                      + "Numero de Sudokus que o programa falhou em colorir: " + falhas + "\n"
+                      + "\n"
+                      + "Media de tempo de execução por sudoku: " + (totaltime/quantidade) + "\n"
+                      + (((sucessos+nao_otimo)/quantidade)*100) + "% de Sudokus coloridos com sucesso" + "\n"
+                      + (((sucessos)/quantidade)*100) + "% de Sudokus coloridos com seu numero cromatico" + "\n";
 
-        output.append(s);
-        System.out.print(s);
+          output.append(s);
+          System.out.print(s);
 
-        output.close();
+          output.close();
+        }
 
 
 
