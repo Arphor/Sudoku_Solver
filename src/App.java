@@ -1,5 +1,6 @@
 
 import java.io.FileWriter;
+import java.util.Scanner;
 
 import Controle.Leitura;
 
@@ -8,12 +9,37 @@ public class App {
     public static void main(String[] args) throws Exception {
         Leitura leitor = new Leitura();
 
-        BufferedWriter output;
-        output = new BufferedWriter(new FileWriter("resultados.txt", true));
 
-        output.newLine();
+        Scanner sc=new Scanner(System.in);
+        
+        String welcome = "Bem vindo ao Sudoku Solver.\n"
+                        + "Para prosseguir digite o numero de uma das opcoes e pressione enter:\n"
+                        + "Digite 1 para Instrucoes.\n"
+                        + "Digite 2 para Selecionar arquivo de leitura.\n"
+                        + "Digite 3 para Encerrar o programa.";
 
-        output.close();
+        System.out.println(welcome);
+        String entrada = sc.nextLine();
+        while(!entrada.equals("3") && !entrada.equals("1") && !entrada.equals("2")){
+            System.out.println("Entrada invalida, por favor, tente novamente.");
+            System.out.println(entrada);
+            entrada = sc.nextLine();
+        }
+
+        System.out.println("oi");
+
+        while(!entrada.equals("3")){
+            if (entrada.equals("1")){
+                String instrucoes = "INSTRUCOES";
+                System.out.println(instrucoes);
+            }
+
+            if (entrada.equals("2")){
+                String programa = "PROGRAMA";
+                System.out.println(programa);
+            }
+            entrada = sc.nextLine();
+        }
         
         //System.out.println("Digite o nome do arquivo dentro da pasta de arquivos no formato arquivo.txt");
         //leitor.ler();
@@ -30,8 +56,8 @@ public class App {
             {9,3,2,0,0,0,7,1,4}
         };
 
-        leitor.outSudokus(arr, arr, 0, 0, 1);
-        leitor.printResults();
+        //leitor.outSudokus(arr, arr, 0, 0, 1);
+        //leitor.printResults();
 
 
         /*
