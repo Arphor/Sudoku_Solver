@@ -208,15 +208,16 @@ public class Controlador {
 
     public int checagem(){
         
-        if(this.usedtotalColors > this.expectedtotalColors){
-            return -1;
-        }
         for(int i=0; i<this.expectedtotalColors; i++){
             for(int j=0;j<this.expectedtotalColors;j++){
                 if(!checkRow(i, j) || !checkColumn(i, j) || !checkRegion(i, j)){
                     return 1;
                 }
             }
+        }
+
+        if(this.usedtotalColors > this.expectedtotalColors){
+            return -1;
         }
 
         return 0;
