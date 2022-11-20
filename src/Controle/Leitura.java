@@ -174,6 +174,9 @@ public class Leitura {
 
           PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
 
+          double media_cor = ((sucessos+nao_otimo)*100)/(quantidade); 
+          double media_erro = ((sucessos*100)/quantidade);
+
 
           String s = "\n"
                       + "O arquivo chegou ao fim. Aqui estão os resultados:\n"
@@ -185,8 +188,8 @@ public class Leitura {
                       + "Numero de Sudokus que o programa falhou em colorir: " + falhas + "\n"
                       + "\n"
                       + "Media de tempo de execução por sudoku: " + (totaltime/quantidade) + " nanosegundos\n"
-                      + (((sucessos+nao_otimo)/quantidade)*100) + "% de Sudokus coloridos com sucesso" + "\n"
-                      + (((sucessos)/quantidade)*100) + "% de Sudokus coloridos com seu numero cromatico" + "\n";
+                      + media_cor + "% de Sudokus coloridos com sucesso" + "\n"
+                      + media_erro + "% de Sudokus coloridos com seu numero cromatico" + "\n";
 
           output.append(s);
           System.out.print(s);

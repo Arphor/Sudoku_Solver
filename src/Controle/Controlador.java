@@ -213,7 +213,7 @@ public class Controlador {
         }
         for(int i=0; i<this.expectedtotalColors; i++){
             for(int j=0;j<this.expectedtotalColors;j++){
-                if(!checkRow(i, j) || !checkColumn(j, i)){
+                if(!checkRow(i, j) || !checkColumn(i, j) || !checkRegion(i, j)){
                     return 1;
                 }
             }

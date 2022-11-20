@@ -26,7 +26,6 @@ public class App {
             entrada = sc.nextLine();
         }
 
-        System.out.println("oi");
 
         while(!entrada.equals("3")){
             if (entrada.equals("1")){
@@ -35,30 +34,15 @@ public class App {
             }
 
             if (entrada.equals("2")){
-                String programa = "PROGRAMA";
-                System.out.println(programa);
+                System.out.println("Digite o nome do arquivo de entrada: ");
                 leitor.ler();
             }
+            System.out.println("O que deseja fazer agora? (1, 2, 3)");
             entrada = sc.nextLine();
         }
         
         //System.out.println("Digite o nome do arquivo dentro da pasta de arquivos no formato arquivo.txt");
         //leitor.ler();
-
-        int arr[][] = {
-            {7,2,3,0,0,0,1,5,9},
-            {6,0,0,3,0,2,0,0,8},
-            {8,0,0,0,1,0,0,0,2},
-            {0,7,0,6,5,4,0,2,0},
-            {0,0,4,2,0,7,3,0,0},
-            {0,5,0,9,3,1,0,4,0},
-            {5,0,0,0,7,0,0,0,3},
-            {4,0,0,1,0,3,0,0,6},
-            {9,3,2,0,0,0,7,1,4}
-        };
-
-        leitor.outSudokus(arr, arr, 0, 0, 1);
-        leitor.printResults();
 
 
         /*
