@@ -206,19 +206,19 @@ public class Controlador {
 
     }
 
-    public boolean checagem(){
+    public int checagem(){
         
         if(this.usedtotalColors > this.expectedtotalColors){
-            return false;
+            return -1;
         }
         for(int i=0; i<this.expectedtotalColors; i++){
             for(int j=0;j<this.expectedtotalColors;j++){
                 if(!checkRow(i, j) || !checkColumn(j, i)){
-                    return false;
+                    return 1;
                 }
             }
         }
 
-        return true;
+        return 0;
     }
 }

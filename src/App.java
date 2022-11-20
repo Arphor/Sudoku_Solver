@@ -37,6 +37,7 @@ public class App {
             if (entrada.equals("2")){
                 String programa = "PROGRAMA";
                 System.out.println(programa);
+                leitor.ler();
             }
             entrada = sc.nextLine();
         }
@@ -56,8 +57,8 @@ public class App {
             {9,3,2,0,0,0,7,1,4}
         };
 
-        //leitor.outSudokus(arr, arr, 0, 0, 1);
-        //leitor.printResults();
+        leitor.outSudokus(arr, arr, 0, 0, 1);
+        leitor.printResults();
 
 
         /*
