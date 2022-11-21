@@ -7,8 +7,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -29,17 +27,11 @@ public class Leitura {
 
     public Double timeSolu(){
       tempoTSolucao = ((double)this.endTime - (double)this.startTime2); 
-      NumberFormat format = new DecimalFormat("###.#######");
-      //String f = format.format(tempoTSolucao);
-      //System.out.println("TESTE: " + f);
       return tempoTSolucao;
     }
     //Contagem do tempo
     public Double timeTotal(){
       tempoTotal = ((double)this.endTime - (double)this.startTime);
-      NumberFormat format = new DecimalFormat("###.#######");
-      //String f = format.format(tempoTotal);
-      //System.out.println("TESTE: " + f);
       return tempoTotal;    
     }
     public boolean verificarTabela(int array[][]){
@@ -51,7 +43,7 @@ public class Leitura {
       return true;
     }
 
-    public void ler() {
+    public void ler() throws FileNotFoundException {
         Scanner ler = new Scanner(System.in);
         int quantidaT = 0;
         this.sucessos=0;
@@ -174,9 +166,6 @@ public class Leitura {
         
 
           PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
-          NumberFormat format = new DecimalFormat("###.#######");
-          //String f = format.format(tempoTotal/1000000000);
-          //System.out.println(f);
           
 
 

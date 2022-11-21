@@ -1,15 +1,14 @@
 
-import java.io.FileWriter;
+import java.io.PrintStream;
 import java.util.Scanner;
-
 import Controle.Leitura;
-
-import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 public class App {
     public static void main(String[] args) throws Exception {
         Leitura leitor = new Leitura();
 
-        
+        PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",false));
+        output.close();
 
         Scanner sc=new Scanner(System.in);
         
@@ -39,7 +38,10 @@ public class App {
                 + "Sudokus_9x9_medio.txt \n"
                 + "Sudokus_9x9_dificil.txt \n"
                 + "Sudokus_16x16_facil.txt \n"
-                + "Sudokus_16x16_medio.txt \n";
+                + "Sudokus_16x16_medio.txt \n"
+                + "\n"
+                + "O programa vai apenas acrescentar os resultados no mesmo arquivo de saída caso você os execute consecutivamente.\n"
+                + "Para um Sudoku ser considerado Resolvido Com Sucesso ele precisa ter sido completamente colorido e se manter respeitando as regras do jogo.";
                 System.out.println(instrucoes);
             }
 
@@ -48,7 +50,10 @@ public class App {
                 System.out.print(programa);
                 leitor.ler();
             }
+            System.out.println("Digite o numero da próxima ação.");
             entrada = sc.nextLine();
         }
+
+        sc.close();
     }
 }
