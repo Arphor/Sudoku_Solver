@@ -9,6 +9,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Leitura leitor = new Leitura();
 
+        
 
         Scanner sc=new Scanner(System.in);
         
@@ -26,39 +27,28 @@ public class App {
             entrada = sc.nextLine();
         }
 
-
         while(!entrada.equals("3")){
             if (entrada.equals("1")){
-                String instrucoes = "INSTRUCOES";
+                String instrucoes = "INSTRUCOES:\n"
+                + "Após selecionar a opção 2 digite o nome do arquivo, incluindo o .txt, que deseja executar.\n"
+                + "\n"
+                + "Nomes de arquivos: \n"
+                + "Sudokus_4x4_facil.txt \n"
+                + "Sudokus_4x4_dificil.txt \n"
+                + "Sudokus_9x9_facil.txt \n"
+                + "Sudokus_9x9_medio.txt \n"
+                + "Sudokus_9x9_dificil.txt \n"
+                + "Sudokus_16x16_facil.txt \n"
+                + "Sudokus_16x16_medio.txt \n";
                 System.out.println(instrucoes);
             }
 
             if (entrada.equals("2")){
-                System.out.println("Digite o nome do arquivo de entrada: ");
+                String programa = "Qual arquivo deseja executar?: ";
+                System.out.print(programa);
                 leitor.ler();
             }
-            System.out.println("O que deseja fazer agora? (1, 2, 3)");
             entrada = sc.nextLine();
         }
-        
-        //System.out.println("Digite o nome do arquivo dentro da pasta de arquivos no formato arquivo.txt");
-        //leitor.ler();
-
-
-        /*
-        final long startTime = System.currentTimeMillis();
-        Controlador c = new Controlador();
-        c.makeGraph(arr);
-        c.createEdges();
-        c.DSatur();
-        final long endTime = System.currentTimeMillis();*/
-
-        //System.out.println("Hello, World!");
-
-        //arr = c.print();
-
-        //System.out.println(Arrays.deepToString(arr));
-        //System.out.println("Total execution time: " + (endTime - startTime) + " milliseconds");
-
     }
 }

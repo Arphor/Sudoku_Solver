@@ -34,7 +34,7 @@ public class Leitura {
       //System.out.println("TESTE: " + f);
       return tempoTSolucao;
     }
-
+    //Contagem do tempo
     public Double timeTotal(){
       tempoTotal = ((double)this.endTime - (double)this.startTime);
       NumberFormat format = new DecimalFormat("###.#######");
@@ -97,7 +97,8 @@ public class Leitura {
               tabelaResultado = c.print();
 
               outSudokus(tabela, tabelaResultado, quantidaT, endTime, c.checagem());
-              this.totaltime += timeTotal();
+              //Contagem do tempo
+              this.totaltime += (endTime - startTime);
               
               
 
@@ -118,7 +119,7 @@ public class Leitura {
               e.getMessage());
         }
     
-        System.out.println();
+        
       }
 
       public void outSudokus(int arr[][], int arr_result[][], int number, long tempo, int b) throws IOException{
@@ -173,23 +174,24 @@ public class Leitura {
         
 
           PrintStream output = new PrintStream(new FileOutputStream("resultados.txt",true));
-
-          double media_cor = ((sucessos+nao_otimo)*100)/(quantidade); 
-          double media_erro = ((sucessos*100)/quantidade);
+          NumberFormat format = new DecimalFormat("###.#######");
+          //String f = format.format(tempoTotal/1000000000);
+          //System.out.println(f);
+          
 
 
           String s = "\n"
                       + "O arquivo chegou ao fim. Aqui estão os resultados:\n"
                       + "\n"
                       + "Numero Total de Sudokus Processados: " + quantidade + "\n"
-                      + "Tempo Total de Execução: " + totaltime + " nanosegundos\n"
+                      + "Tempo Total de Execução: " + totaltime/1000000 + " milisegundos\n"
                       + "Numero Total de Sudokus Resolvidos com Sucesso: " + sucessos + "\n"
                       + "Numero de Sudokus Coloridos, mas com numero errado de cores: " + nao_otimo + "\n"
                       + "Numero de Sudokus que o programa falhou em colorir: " + falhas + "\n"
                       + "\n"
-                      + "Media de tempo de execução por sudoku: " + (totaltime/quantidade) + " nanosegundos\n"
-                      + media_cor + "% de Sudokus coloridos com sucesso" + "\n"
-                      + media_erro + "% de Sudokus coloridos com seu numero cromatico" + "\n";
+                      + "Media de tempo de execução por sudoku: " + ((totaltime/1000000)/quantidade) + " milesegundos\n"
+                      + (((sucessos+nao_otimo)/quantidade)*100) + "% de Sudokus coloridos com sucesso" + "\n"
+                      + (((sucessos)/quantidade)*100) + "% de Sudokus coloridos com seu numero cromatico" + "\n";
 
           output.append(s);
           System.out.print(s);
