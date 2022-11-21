@@ -35,6 +35,12 @@ public class Leitura {
       return tempoTotal;    
     }
     public boolean verificarTabela(int array[][]){
+
+      int x = (int) Math.sqrt(array.length);
+      if(!(Math.pow(x,2) == array.length)){
+        return false;
+      }
+
       for(int i=0; i<array.length;i++){
         if(array.length != array[i].length){
           return false;

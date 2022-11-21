@@ -1,0 +1,132 @@
+Sudoku número: 1
+Original:                           Final:   
+[2, 1, 0, 0]                        [2, 1, 4, 3] 
+[0, 3, 2, 0]                        [4, 3, 2, 1] 
+[0, 0, 0, 4]                        [3, 2, 1, 4] 
+[1, 0, 0, 0]                        [1, 4, 3, 2] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 2
+Original:                           Final:   
+[1, 0, 3, 4]                        [1, 2, 3, 4] 
+[0, 3, 0, 0]                        [4, 3, 1, 2] 
+[2, 0, 0, 0]                        [2, 1, 4, 3] 
+[0, 0, 0, 1]                        [3, 4, 2, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 3
+Original:                           Final:   
+[0, 0, 1, 2]                        [3, 4, 1, 2] 
+[0, 1, 0, 3]                        [2, 1, 4, 3] 
+[0, 0, 0, 0]                        [1, 2, 3, 4] 
+[4, 0, 2, 0]                        [4, 3, 2, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 4
+Original:                           Final:   
+[0, 2, 3, 0]                        [1, 2, 3, 4] 
+[0, 3, 0, 0]                        [4, 3, 1, 2] 
+[0, 0, 0, 1]                        [3, 4, 2, 1] 
+[2, 0, 4, 0]                        [2, 1, 4, 3] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 5
+Original:                           Final:   
+[4, 2, 0, 0]                        [4, 2, 3, 1] 
+[1, 0, 0, 0]                        [1, 3, 4, 2] 
+[0, 1, 2, 0]                        [3, 1, 2, 4] 
+[0, 0, 0, 3]                        [2, 4, 1, 3] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 6
+Original:                           Final:   
+[0, 0, 0, 3]                        [1, 2, 4, 3] 
+[4, 0, 0, 0]                        [4, 3, 1, 2] 
+[0, 1, 3, 0]                        [2, 1, 3, 4] 
+[3, 0, 2, 0]                        [3, 4, 2, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 7
+Original:                           Final:   
+[0, 3, 2, 0]                        [4, 3, 2, 1] 
+[0, 0, 0, 4]                        [2, 1, 3, 4] 
+[1, 0, 0, 0]                        [1, 2, 4, 3] 
+[0, 0, 1, 2]                        [3, 4, 1, 2] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 8
+Original:                           Final:   
+[4, 0, 0, 0]                        [4, 1, 3, 2] 
+[0, 0, 1, 0]                        [2, 3, 1, 4] 
+[0, 2, 4, 0]                        [1, 2, 4, 3] 
+[0, 0, 2, 1]                        [3, 4, 2, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 9
+Original:                           Final:   
+[0, 2, 0, 0]                        [4, 2, 1, 3] 
+[0, 0, 2, 0]                        [1, 3, 2, 4] 
+[3, 0, 4, 0]                        [3, 1, 4, 2] 
+[2, 0, 0, 1]                        [2, 4, 3, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 10
+Original:                           Final:   
+[0, 0, 0, 1]                        [3, 2, 4, 1] 
+[4, 0, 0, 2]                        [4, 1, 3, 2] 
+[2, 0, 0, 4]                        [2, 3, 1, 4] 
+[0, 0, 2, 3]                        [1, 4, 2, 3] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 11
+Original:                           Final:   
+[4, 0, 0, 0]                        [4, 2, 3, 1] 
+[0, 0, 0, 2]                        [3, 1, 4, 2] 
+[2, 0, 1, 4]                        [2, 3, 1, 4] 
+[0, 4, 0, 0]                        [1, 4, 2, 3] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 12
+Original:                           Final:   
+[0, 2, 1, 0]                        [3, 2, 1, 4] 
+[0, 0, 3, 2]                        [1, 4, 3, 2] 
+[0, 1, 0, 0]                        [4, 1, 2, 3] 
+[2, 0, 0, 1]                        [2, 3, 4, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 13
+Original:                           Final:   
+[4, 0, 2, 1]                        [4, 3, 2, 1] 
+[0, 0, 0, 3]                        [2, 1, 4, 3] 
+[0, 0, 0, 0]                        [3, 4, 1, 2] 
+[0, 2, 3, 0]                        [1, 2, 3, 4] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 14
+Original:                           Final:   
+[2, 4, 0, 3]                        [2, 4, 1, 3] 
+[0, 0, 0, 0]                        [3, 1, 2, 4] 
+[0, 3, 4, 0]                        [1, 3, 4, 2] 
+[0, 0, 0, 1]                        [4, 2, 3, 1] 
+
+Programa foi bem sucedido em preencher o sudoku.
+Sudoku número: 15
+Original:                           Final:   
+[4, 0, 0, 0]                        [4, 2, 3, 1] 
+[0, 0, 4, 0]                        [1, 3, 4, 2] 
+[0, 1, 2, 0]                        [3, 1, 2, 4] 
+[2, 0, 0, 3]                        [2, 4, 1, 3] 
+
+Programa foi bem sucedido em preencher o sudoku.
+
+O arquivo chegou ao fim. Aqui estão os resultados:
+
+Numero Total de Sudokus Processados: 15
+Tempo Total de Execução: 16 milisegundos
+Numero Total de Sudokus Resolvidos com Sucesso: 15
+Numero de Sudokus Coloridos, mas com numero errado de cores: 0
+Numero de Sudokus que o programa falhou em colorir: 0
+
+Media de tempo de execução por sudoku: 1 milesegundos
+100% de Sudokus coloridos com sucesso
+100% de Sudokus coloridos com seu numero cromatico
