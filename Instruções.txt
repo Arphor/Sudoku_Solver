@@ -1,0 +1,7 @@
+Com o projeto aberto no VScode
+Aperte F5 para executar o programa, caso o comando esteja desativado selecione a opção Run,
+
+Com o projeto executando siga os passos pelo terminal aberto
+1: Apresentação das instruções e nome de todos os arquivos de teste
+2: Digite o nome do arquivo de teste, que está dentro da pasta de arquivos, com o final .txt para processar
+3: Encerra a execução do projeto.
