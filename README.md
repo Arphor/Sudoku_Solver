@@ -1,18 +1,13 @@
-## Getting Started
+Com o a pasta do projeto aberto no terminal navegue até ..\Sudoku_Solver\bin e basta executar o comando:
+    java --enable-preview App
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+Com o projeto executando siga os passos pelo terminal aberto
+1: Apresentação das instruções e nome de todos os arquivos de teste
+2: Digite o nome do arquivo de teste, que está dentro da pasta de arquivos, com o final .txt para processar
+3: Encerra a execução do projeto.
 
-The workspace contains two folders by default, where:
+Você pode usar arquivos de teste personalizados se os formatar de acordo com os que se encontram na pasta de arquivos.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Vale lembrar que a cada execução do programa ele cria(ou recria se já existir) o arquivo de saída, mas se dentro de uma
+mesma execução você rodar diversos arquivos .txt ele só vai acrescentar os resultados no final do arquivo de saída já existente.
